@@ -14,6 +14,7 @@
             <div class="menu_icon" @click="active = !active, bodyLock" :class="{active}">
                 <span></span>
             </div>
+            <div class="menu_body_shadow" @click="active = !active" :class="{active}"></div>
             <nav class="menu_body" :class="{active}">
                 <ul class="menu_list">
                     <li><a href="index.html" class="menu_link">Contact us</a></li>
@@ -168,17 +169,29 @@ body.lock {
     transform: rotate(45deg) translate(0px, 50%);
     background-color: #41456B;
 }
-
+.menu_body_shadow {
+    position: fixed;
+    display: none;
+    top: 0;
+    left:0;
+    width: 100%;
+    z-index: 3;
+    width: 100%;
+    height: 100%;
+}
+.menu_body_shadow.active {
+    display: block;
+}
 .menu_body {
     position: fixed;
     top: 0;
     right: -100%;
     width: 570px;
+    // width: calc(570px / 1440px * 100%);
     height: 100%;
     background: #fff;
     padding: 130px 0px 105px 60px;
     z-index: 4;
-    // margin-top: 0px;
     transition: right 0.3s ease 0s;
     overflow: auto;
     display: flex;
