@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <Header/>
     <router-view/>
     <nav>
       <router-link to="/">Home</router-link> |
@@ -7,6 +8,25 @@
     </nav>
   </div>
 </template>
+<script>
+import Header from '@/components/Header.vue'
+
+export default {
+    components: {
+    Header
+  },
+  data() {
+        return {
+            items: [],
+        active: false,
+        lock: false,
+        }
+  },
+
+
+}
+</script>
+
 
 <style lang="scss">
 /* Стили шрифтов */
@@ -22,21 +42,9 @@
 
 #app {
   font-family: 'Gilroy';
+  font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-}
-
-nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
 }
 </style>
