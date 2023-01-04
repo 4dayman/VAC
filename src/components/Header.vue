@@ -1,15 +1,19 @@
 <template>
-<div class="container">
+<div class="container" :class="{lock}">
     <header class="header">
         <div class="header_logo">
-            <a href="index.html">
+            <router-link to="/">
                 <img src="@/assets/HeaderLogo.png" alt="">
-            </a>
+            </router-link>
         </div>
         <div class="header_menu menu">
             <div>
-                <a class="btn" href="#">Inventory</a>
-                <a class="btn" href="#popup">Request a car</a>
+                <router-link to="/about">
+                    <main-button class="white">Inventory</main-button>
+                </router-link>
+                <router-link to="/">
+                    <main-button class="colored">Request a car</main-button>
+                </router-link>
             </div>
             <div class="menu_icon" @click="active = !active, bodyLock" :class="{active}">
                 <span></span>
@@ -25,9 +29,15 @@
                     <li><a href="#popup" class="btn_send_1">Calculate</a></li>
                 </ul>
                 <div class="menu_social">
-                    <img src="@/assets/socialIcons/Instagram.svg" alt="">
-                    <img src="@/assets/socialIcons/Facebook.svg" alt="">
-                    <img src="@/assets/socialIcons/YouTube.svg" alt="">
+                    <a href="#">
+                        <img src="@/assets/socialIcons/Instagram.svg" alt="">
+                    </a>
+                    <a href="#">
+                        <img src="@/assets/socialIcons/Facebook.svg" alt="">
+                    </a>
+                    <a href="#">
+                        <img src="@/assets/socialIcons/YouTube.svg" alt="">
+                    </a>
                 </div>
             </nav>
         </div>
@@ -36,11 +46,15 @@
 </template>
 
 <script>
+import MainButton from '@/components/UI/MainButton.vue'
 export default {
+    components: {
+        MainButton
+    },
     data() {
         return {
             items: [],
-        active: true,
+        active: false,
         lock: false,
         }
     },
@@ -57,42 +71,38 @@ body.lock {
     overflow: hidden;
 }
 .container {
-    max-width: 1440px;
+    position: fixed;
+    top: 0;
     width: 100%;
-    padding: 0 120px;
-    display: flex;
-    // margin: 0 auto;
+    padding: 0 15px;
+    margin: 0 auto;
     transition: all 0.5s ease 0.1s;
     @media (max-width: 768px) {
         padding: 0 24px;
- 
     }
 }
-.btn{
-    font-family: 'Gilroy';
-    font-weight: 700;
-    font-size: 16px;
-    line-height: 14px;
-    text-align: center;
-    letter-spacing: 0.02em;
-    text-transform: uppercase;
-    border: 1px solid #7481FF;
-    border-radius: 2px;
-    margin-right: 10px;
-    padding: 16px 17px;
-}
+
 .header {
-    // margin: 0 auto;
+    margin: 0 auto;
     position: relative;
-    width: 100%;
+    max-width: 1230px;
     height: 80px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     transition: all 1.5 ease 0;
-    // background: #000;
+    background: rgba(255, 255, 255, 0.8);
     z-index: 1;
 }
+.header_fixed {
+    width: 100%;
+    height: 60px;
+    position: fixed;
+    top: 0px;
+    background: linear-gradient(180deg, #999, #666, #999);
+    z-index: 3;
+}
+
 .header_logo {
     width: 112px;
     height: 33px;
@@ -110,6 +120,7 @@ body.lock {
     width: 37px;
     height: 30px;
     cursor: pointer;
+    margin-left: 63px;
 }
 
 .menu_icon span,
@@ -174,7 +185,6 @@ body.lock {
     display: none;
     top: 0;
     left:0;
-    width: 100%;
     z-index: 3;
     width: 100%;
     height: 100%;
@@ -186,8 +196,7 @@ body.lock {
     position: fixed;
     top: 0;
     right: -100%;
-    width: 570px;
-    // width: calc(570px / 1440px * 100%);
+    width: 42%;
     height: 100%;
     background: #fff;
     padding: 130px 0px 105px 60px;
@@ -208,7 +217,7 @@ body.lock {
     position: fixed;
     top: 0;
     right: 0;
-    width: 570px;
+    width: 42%;
     height: 80px;
     background: #fff;
     z-index: 3;
@@ -225,10 +234,17 @@ body.lock {
             color: #41456B;
         }
     }
-    // margin-top: 130px;
-    // margin-left: 60px;
 }
-
+.menu_social {
+    img{
+        margin-right: 10px;
+        width: 30px;
+        height: 30px;
+        &:hover {
+            opacity: 0.8;
+        }
+    }
+}
 
 
 /* Old menu */
