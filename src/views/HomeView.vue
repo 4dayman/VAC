@@ -1,7 +1,8 @@
 <template>
   <div class="home">
+    <hello-screen/>
     <div class="">Home Page</div>
-      <nav>
+    <nav>
         <router-link to="/">Home</router-link> |
         <router-link to="/about">About</router-link>
     </nav>
@@ -9,9 +10,11 @@
 </template>
 
 <script>
+import HelloScreen from '@/components/HelloScreen.vue'
 export default {
   name: 'HomeView',
   components: {
+    HelloScreen
   }
 }
 </script>

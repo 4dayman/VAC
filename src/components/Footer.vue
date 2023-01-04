@@ -35,6 +35,7 @@
     background: #7481FF;
     width: 100%;
     padding: 0 15px;
+    z-index: 1;
 }
 .footer {
     margin: 0 auto;

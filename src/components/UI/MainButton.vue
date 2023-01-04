@@ -42,7 +42,7 @@ export default {
 .white {
     color: #7481FF;
     padding: 16px 17px;
-    background: none;
+    background: #fff;
 }
 .colored {
     color: white;
