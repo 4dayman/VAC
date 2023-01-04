@@ -15,7 +15,7 @@
                     <main-button class="colored">Request a car</main-button>
                 </router-link>
             </div>
-            <div class="menu_icon" @click="active = !active, bodyLock" :class="{active}">
+            <div class="menu_icon" @click="active = !active, active" :class="{active}">
                 <span></span>
             </div>
             <div class="menu_body_shadow" @click="active = !active" :class="{active}"></div>
@@ -55,21 +55,20 @@ export default {
         return {
             items: [],
         active: false,
-        lock: false,
         }
     },
     methods: {
-        bodyLock() {
-            document.body.classList.toggle('lock');
-        }
-    }
+    },
+    watch: {
+    // whenever active changes, this function will run
+    active() {
+    document.body.style.overflow = this.active ? 'hidden' : ''
+  }
+}
 };
 </script>
 
 <style lang="scss" scoped>
-body.lock {
-    overflow: hidden;
-}
 .container {
     position: fixed;
     top: 0;
@@ -81,7 +80,6 @@ body.lock {
         padding: 0 24px;
     }
 }
-
 .header {
     margin: 0 auto;
     position: relative;
@@ -134,9 +132,6 @@ body.lock {
     background: #41456B;
     border-radius: 7px;
 }
-
-
-
 .menu_icon::before, .menu_icon::after {
     content: "";
     width: 37px;
@@ -245,100 +240,4 @@ body.lock {
         }
     }
 }
-
-
-/* Old menu */
-// .menu__list_body{
-//     display: flex;
-//     flex-direction: column;
-//     justify-content: space-between;
-// }
-// .menu_list{
-//     display: flex;
-//     flex-direction: column;
-//     gap: 20px;
-//     align-items: flex-start;
-//     position: absolute;
-//     top: 0px;
-//     right: 0;
-//     padding-top: 130px;
-//     padding-left: 60px;
-//     min-width: 570px;
-//     height: 100vh;
-//     background: #fff;
-//     z-index: 1;
-//     li {
-//         font-family: 'Gilroy';
-//         font-style: normal;
-//         font-weight: 700;
-//         font-size: 25px;
-//         line-height: 140%;
-//         letter-spacing: 0.02em;
-//         color: #41456B;
-//         cursor: pointer;
-//     }
-// }
-// .modal-backdrop{
-//     position: absolute;
-//     top: 0;
-//     right: 0;
-//     left: 0;
-//     bottom: 0;
-//     height: 100vh;
-//     background: rgba(0, 0, 0, 0.1);
-// }
-// .menu__social__icons{
-//     margin-top: 40%;
-// }
-// .fade{
-//     height: 100%;
-// }
-// .logo{
-//     min-width: 112px;
-//     max-height: 33px;
-//     margin-right: 10px;
-// }
-// .header__wrapper{
-//     position: fixed;
-// }
-// .header {
-//     display: flex;
-//     align-items: center;
-//     justify-content: space-between;
-//     position: fixed;
-//     width: 100%;
-//     background: rgba(255, 255, 255, 0.9);
-// }
-// .header__right{
-//     display: flex;
-//     justify-content: flex-end;
-//     align-items: center;
-// }
-// .btn{
-//     font-family: 'Gilroy';
-//     font-weight: 700;
-//     font-size: 16px;
-//     line-height: 14px;
-//     text-align: center;
-//     letter-spacing: 0.02em;
-//     text-transform: uppercase;
-//     border: 1px solid #7481FF;
-//     border-radius: 2px;
-//     margin-right: 10px;
-//     padding: 16px 17px;
-// }
-// .primary{
-//     color: #7481FF;
-//     background-color: #FFFFFF;
-// }
-// .accent{
-//     color: #FFFFFF;
-//     background-color: #7481FF;
-// }
-// .material-icons{
-//     color: #41456B;
-//     font-size: 50px;
-//     z-index: 2;
-//     cursor: pointer;
-// }
 </style>
