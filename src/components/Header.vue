@@ -73,6 +73,7 @@ export default {
     position: fixed;
     top: 0;
     width: 100%;
+    background: rgba(255, 255, 255, 0.8);
     padding: 0 15px;
     margin: 0 auto;
     transition: all 0.5s ease 0.1s;
@@ -84,15 +85,14 @@ export default {
     margin: 0 auto;
     position: relative;
     max-width: 1230px;
-    height: 80px;
+    min-height: 80px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     transition: all 1.5 ease 0;
-    background: rgba(255, 255, 255, 0.8);
     z-index: 1;
     @media (max-width: 360px) {
-        height: 55px;
+        min-height: 55px;
     }
 }
 .header_fixed {

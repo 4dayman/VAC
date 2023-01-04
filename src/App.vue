@@ -1,11 +1,8 @@
 <template>
-  <div id="app">
+  <div id="app" class="wrapper">
     <Header/>
     <router-view />
-    <nav>
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </nav>
+    <div></div>
     <Footer/>
   </div>
 </template>
@@ -48,6 +45,11 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  margin-top: 80px;
+  // margin-top: 80px;
+}
+.wrapper {
+  height: 100%;
+  display: grid;
+  grid-template: minmax(80px, auto) 1fr minmax(133px, auto) / 1fr;
 }
 </style>
