@@ -1,15 +1,15 @@
 <template>
-<div class="container" :class="{lock}">
+<div class="container">
     <header class="header">
         <div class="header_logo">
             <router-link to="/">
-                <img src="@/assets/HeaderLogo.png" alt="">
+                <img src="@/assets/HeaderLogo.svg" alt="">
             </router-link>
         </div>
         <div class="header_menu menu">
             <div>
                 <router-link to="/about">
-                    <main-button class="white">Inventory</main-button>
+                    <main-button class="white hide">Inventory</main-button>
                 </router-link>
                 <router-link to="/">
                     <main-button class="colored">Request a car</main-button>
@@ -91,6 +91,9 @@ export default {
     transition: all 1.5 ease 0;
     background: rgba(255, 255, 255, 0.8);
     z-index: 1;
+    @media (max-width: 360px) {
+        height: 55px;
+    }
 }
 .header_fixed {
     width: 100%;
@@ -102,8 +105,20 @@ export default {
 }
 
 .header_logo {
-    width: 112px;
-    height: 33px;
+    img{
+        width: 112px;
+        height: 33px;
+        transition: all 0.4s ease;
+        @media (max-width: 767px) {
+            width: 81px;
+            height: 24px;
+        }
+    }
+}
+@media (max-width: 767px) {
+    .hide{
+        display: none;
+    }
 }
 .header_menu{
     display: flex;
@@ -119,6 +134,12 @@ export default {
     height: 30px;
     cursor: pointer;
     margin-left: 63px;
+    transition: all 0.4s ease;
+    @media (max-width: 767px) {
+        margin-left: 23px;
+        width: 30px;
+        height: 25px;
+    }
 }
 
 .menu_icon span,
@@ -135,6 +156,9 @@ export default {
 .menu_icon::before, .menu_icon::after {
     content: "";
     width: 37px;
+        @media (max-width: 767px) {
+            width: 30px;
+        }
 }
 
 .menu_icon::before {
@@ -167,6 +191,9 @@ export default {
     top: 50%;
     transform: rotate(-45deg) translate(0px, -50%);
     background-color: #41456B;
+    @media (max-width: 767px) {
+        width: 30px;
+    }
 }
 
 .menu_icon.active::after {
@@ -174,6 +201,10 @@ export default {
     bottom: 50%;
     transform: rotate(45deg) translate(0px, 50%);
     background-color: #41456B;
+    @media (max-width: 767px) {
+        width: 30px;
+    }
+
 }
 .menu_body_shadow {
     position: fixed;
