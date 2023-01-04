@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <hello-screen/>
+    <HelloScreen/>
     <div class="">Home Page</div>
     <nav>
         <router-link to="/">Home</router-link> |

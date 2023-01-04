@@ -12,6 +12,9 @@
                     </div>
                     <main-button class="white max">Request a suv</main-button>
                 </div>
+                <div class="content_right">
+                    <HelloScreenSwiper/>
+                </div>
             </div>
         </div>
     </div>
@@ -19,10 +22,11 @@
 
 <script>
 import MainButton from '@/components/UI/MainButton.vue'
+import HelloScreenSwiper from '@/components/HelloScreenSwiper.vue'
 export default {
-    name: 'hello-screen',
     components: {
-        MainButton
+        MainButton,
+        HelloScreenSwiper
     }
 }
 </script>
@@ -46,7 +50,6 @@ export default {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            z-index: 0;
         }
     }
     .hello_road {
