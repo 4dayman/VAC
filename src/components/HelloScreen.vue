@@ -6,14 +6,18 @@
                 <img src="@/assets/Road vector.png" alt="">
             </div>
             <div class="content">
-                <div class="content_left">
+                <div class="content_top">
                     <div class="content_head">
                         The easiest way to buy a car in Canada
                     </div>
-                    <main-button class="white max">Request a suv</main-button>
+                    <div class="content_right">
+                        <HelloScreenSwiper 
+                            @model="showModel"
+                        />
+                    </div>
                 </div>
-                <div class="content_right">
-                    <HelloScreenSwiper/>
+                <div class="content_btn">
+                    <main-button class="white max">Request a suv</main-button>
                 </div>
             </div>
         </div>
@@ -27,6 +31,11 @@ export default {
     components: {
         MainButton,
         HelloScreenSwiper
+    },
+    methods: {
+        showModel(data){
+            console.log(data)
+        }
     }
 }
 </script>
@@ -72,20 +81,35 @@ export default {
         max-width: 1230px;
         padding: 0 15px;
         margin: 0 auto;
-        display: flex;
+        // display: flex;
+        // display: grid;
+        // grid-template: 1fr 1fr;
+        @media (max-width: 768px) {
+        }
+
     }
-    .content_left {
-        margin-top: 120px;
+    .content_top {
+        // margin-top: 120px;
+        padding-top: 120px;
         display: flex;
-        flex-direction: column;
         align-items: flex-start;
         @media (max-width: 768px) {
             align-items: center;
-
+            padding-top: 60px;
+            flex-direction: column;
         }
     }
     .content_right {
-        margin-top: 177px;
+        // margin-top: 177px;
+        @media (max-width: 768px) {
+            margin-top: 60px;
+        }
+    }
+    .content_btn {
+        display: flex;
+        @media (max-width: 768px) {
+            justify-content: center;
+        }
     }
     .content_head {
         z-index: 1;

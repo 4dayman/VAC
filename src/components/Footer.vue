@@ -42,16 +42,16 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 133px;
+    min-height: 133px;
     max-width: 1230px;
     color: #FFFFFF;
     flex-wrap: wrap;
     transition: all 0.4s ease;
     @media (max-width: 768px) {
-        height: 200px;
+        min-height: 200px;
     }
     @media (max-width: 360px) {
-        height: 176px;
+        min-height: 176px;
     }
 }
 .footer_logo {
