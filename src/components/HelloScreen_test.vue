@@ -11,13 +11,16 @@
                         The easiest way to buy a car in Canada
                     </div>
                     <div class="content_right">
-                        <HelloScreenSwiper 
-                            @carModel="showModel"
+                        <HelloScreenSwiper_test 
+                        v-for="image in images"
+                        :key="image.id"
+                        :images_data="image"
+                        @carModel="showModel"
                         />
                     </div>
                 </div>
                 <div class="content_btn">
-                    <main-button class="white max">Request a suv</main-button>
+                    <main-button class="white max">Request a suv {{image.model}}</main-button>
                 </div>
             </div>
         </div>
@@ -26,11 +29,21 @@
 
 <script>
 import MainButton from '@/components/UI/MainButton.vue'
-import HelloScreenSwiper from '@/components/HelloScreenSwiper.vue'
+import HelloScreenSwiper_test from '@/components/HelloScreenSwiper_test.vue'
 export default {
     components: {
         MainButton,
-        HelloScreenSwiper
+        HelloScreenSwiper_test
+    },
+    data() {
+        return {
+            images: [
+              { id: 1, model: 'SUV', imgUrl: require("@/assets/main_swiper/SUV.png") },
+              { id: 2, model: 'CAR', imgUrl: require("@/assets/main_swiper/CAR.png") },
+              { id: 3, model: 'TRUCK', imgUrl: require("@/assets/main_swiper/TRUCK.png") },
+              { id: 4, model: 'VAN', imgUrl: require("@/assets/main_swiper/VAN.png") },
+            ],
+        }
     },
     methods: {
         showModel(data){
