@@ -98,11 +98,19 @@ export default {
             padding-top: 60px;
             flex-direction: column;
         }
+        @media (max-width: 460px) {
+            padding-top: 40px;
+
+        }
     }
     .content_right {
         // margin-top: 177px;
         @media (max-width: 768px) {
             margin-top: 60px;
+        }
+        @media (max-width: 460px) {
+            margin-top: 40px;
+
         }
     }
     .content_btn {
@@ -126,6 +134,9 @@ export default {
             max-width: 600px;
             text-align: center;
             margin-top: 61px;
+        }
+        @media (max-width: 460px) {
+            font-size: 35px;
         }
     }
     .max {

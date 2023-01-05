@@ -71,6 +71,9 @@ export default {
   @media (max-width: 768px) {
     max-width: 370px;
   }
+  @media (max-width: 460px) {
+    max-width: 270px;
+  }
 
 }
 
