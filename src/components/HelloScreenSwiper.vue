@@ -1,21 +1,36 @@
 <template>
-  <swiper class="swiper" :modules="modules" :slides-per-view="1" Navigation>
-    <swiper-slide v-for="image in images" :key="image.id">
-      <img :src="image.imgUrl" />
-    </swiper-slide>
-  </swiper>
+  <div>
+    <swiper
+      class="swiper_wrapper"
+      :slides-per-view="1"
+      :space-between="30"
+      :loop="false"
+      navigation
+    >
+      <swiper-slide
+        class="slide"
+        v-for="image in images"
+        :key="image.id"
+      >
+        <img
+          :src="image.imgUrl"
+        >
+      </swiper-slide>
+    </swiper>
+  </div>
 </template>
 
 <script>
 // import Swiper core and required modules
-import { Navigation } from 'swiper';
+import { Navigation, Pagination } from 'swiper'
 
-// Import Swiper Vue.js components
-import { Swiper, SwiperSlide } from 'swiper/vue';
+import { SwiperCore, Swiper, SwiperSlide } from 'swiper-vue2'
 
 // Import Swiper styles
-import 'swiper/scss';
-import 'swiper/scss/navigation';
+import 'swiper/swiper-bundle.css'
+
+SwiperCore.use([Navigation, Pagination]);
+
 export default {
   components: {
     Swiper,
@@ -29,16 +44,16 @@ export default {
         { id: 3, imgUrl: require("@/assets/main_swiper/TRUCK.png") },
         { id: 4, imgUrl: require("@/assets/main_swiper/VAN.png") },
       ],
-      modules: [Navigation],
     }
   }
 
 };
 </script>
 <style lang="scss" scoped>
-.swiper {
+.swiper_wrapper {
   max-width: 490px;
   display: flex;
+  overflow: hidden;
 }
 
 .swiper-slide {

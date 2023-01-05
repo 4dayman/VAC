@@ -72,8 +72,10 @@ export default {
         max-width: 1230px;
         padding: 0 15px;
         margin: 0 auto;
+        display: flex;
     }
     .content_left {
+        margin-top: 120px;
         display: flex;
         flex-direction: column;
         align-items: flex-start;
@@ -81,6 +83,9 @@ export default {
             align-items: center;
 
         }
+    }
+    .content_right {
+        margin-top: 177px;
     }
     .content_head {
         z-index: 1;
@@ -91,7 +96,7 @@ export default {
         letter-spacing: 0.02em;
         color: #FFFFFF;
         text-align: left;
-        margin-top: 120px;
+        // margin-top: 120px;
         margin-bottom: 60px;
         @media (max-width: 768px) {
             max-width: 600px;

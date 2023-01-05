@@ -21,12 +21,12 @@
             <div class="menu_body_shadow" @click="active = !active" :class="{active}"></div>
             <nav class="menu_body" :class="{active}">
                 <ul class="menu_list">
-                    <li><a href="index.html" class="menu_link">Contact us</a></li>
-                    <li><a href="projects.html" class="menu_link">About VAC</a></li>
-                    <li><a href="about.html" class="menu_link">Lean Rates</a></li>
-                    <li><a href="news.html" class="menu_link">Video</a></li>
-                    <li><a href="contacts.html" class="menu_link">Blog</a></li>
-                    <li><a href="#popup" class="btn_send_1">Calculate</a></li>
+                    <li><a href="" class="menu_link">Contact us</a></li>
+                    <li><a href="" class="menu_link">About VAC</a></li>
+                    <li><a href="" class="menu_link">Lean Rates</a></li>
+                    <li><a href="" class="menu_link">Video</a></li>
+                    <li><a href="" class="menu_link">Blog</a></li>
+                    <li><a href="" class="btn_send_1">Calculate</a></li>
                 </ul>
                 <div class="menu_social">
                     <a href="#">
