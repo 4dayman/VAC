@@ -62,23 +62,24 @@ export default {
 
 <style lang="scss">
 .swiper_wrapper {
-  max-width: 490px;
+  max-width: 600px;
   display: flex;
   overflow: hidden;
   transition: all 0.4s ease;
   @media (max-width: 1024px) {
-    max-width: 400px;
+    max-width: 500px;
   }
   @media (max-width: 768px) {
-    max-width: 370px;
+    max-width: 470px;
   }
   @media (max-width: 460px) {
-    max-width: 270px;
+    max-width: 370px;
   }
 
 }
 
 .swiper-slide {
+  padding: 0 70px;
   img {
     width: 100%;
     height: 100%;
