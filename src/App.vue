@@ -50,6 +50,6 @@ export default {
 .wrapper {
   height: 100%;
   display: grid;
-  grid-template: 1fr 1fr 1fr / 1fr;
+  grid-template: 1fr 1fr / 1fr;
 }
 </style>
