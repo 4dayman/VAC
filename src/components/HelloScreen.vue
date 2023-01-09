@@ -50,8 +50,11 @@ export default {
         position: relative;
         height: 600px;
         transition: all 0.4s ease;
-            @media (max-width: 768px) {
+            @media (max-width: 1024px) {
                 height: 725px;
+            }
+            @media (max-width: 460px) {
+                height: 505px;
             }
         .hello_bg {
             position: absolute;
@@ -93,13 +96,13 @@ export default {
         padding-top: 120px;
         display: flex;
         align-items: flex-start;
-        @media (max-width: 768px) {
+        @media (max-width: 1024px) {
             align-items: center;
             padding-top: 60px;
             flex-direction: column;
         }
         @media (max-width: 460px) {
-            padding-top: 40px;
+            padding-top: 0px;
 
         }
     }
@@ -115,7 +118,7 @@ export default {
     }
     .content_btn {
         display: flex;
-        @media (max-width: 768px) {
+        @media (max-width: 1024px) {
             justify-content: center;
         }
     }

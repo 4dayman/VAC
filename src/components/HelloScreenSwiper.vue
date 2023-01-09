@@ -7,17 +7,19 @@
       :loop="false"
       navigation
       grabCursor
+      @swiper="onSwiper"
       @slideChange="onSlideChange"
     >
       <swiper-slide
         class="slide"
         v-for="image in images"
         :key="image.id"
+        
       >
         <img
           :src="image.imgUrl"
         >
-        <main-button>Request a {{ image.model }}</main-button>
+        <h1>{{ image.model }}</h1>
       </swiper-slide>
     </swiper>
   </div>
@@ -25,14 +27,14 @@
 
 <script>
 // import Swiper core and required modules
-import { Navigation, Pagination } from 'swiper'
+import { Navigation } from 'swiper'
 
 import { SwiperCore, Swiper, SwiperSlide } from 'swiper-vue2'
 
 // Import Swiper styles
 import 'swiper/swiper-bundle.css'
 
-SwiperCore.use([Navigation, Pagination]);
+SwiperCore.use([Navigation]);
 import MainButton from '@/components/UI/MainButton.vue'
 export default {
   components: {
@@ -51,9 +53,11 @@ export default {
     }
   },
   methods: {
-    onSwiper() {},
+    onSwiper() {
+      console.log()
+    },
     onSlideChange() {
-      this.$emit('carModel', this.images.model)
+      this.$emit('carModel', 'this.image.model' )
     },
   }
 
@@ -97,6 +101,11 @@ export default {
     background: #fff;
     transition: opacity .4s ease-in;
     opacity: 0.8;
+    @media (max-width: 460px) {
+      width: 35px;
+      height: 35px;
+  }
+
 }
 .swiper-button-prev:after,
 .swiper-button-next:after {
@@ -104,5 +113,4 @@ export default {
  font-weight: 700;
 
 }
-
 </style>
