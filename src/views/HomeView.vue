@@ -20,7 +20,7 @@ import HowDoesItWork from '@/components/HowDoesItWork.vue'
 import FiveSteps from '@/components/FiveSteps.vue'
 import Advantages from '@/components/Advantages.vue'
 import Inventory from '@/components/Inventory.vue'
-import HeadComp from '@/components/HeadComp.vue'
+// import HeadComp from '@/components/HeadComp.vue'
 export default {
   name: 'HomeView',
   components: {
@@ -29,7 +29,7 @@ export default {
     FiveSteps, 
     Advantages, 
     Inventory, 
-    HeadComp
+    // HeadComp
   }
 }
 </script>

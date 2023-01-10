@@ -77,13 +77,17 @@ export default {
     max-width: 470px;
   }
   @media (max-width: 460px) {
-    max-width: 370px;
+    max-width: 320px;
   }
 
 }
 
 .swiper-slide {
   padding: 0 70px;
+  @media (max-width: 460px) {
+    padding: 0 40px;
+  }
+
   img {
     width: 100%;
     height: 100%;
@@ -111,6 +115,17 @@ export default {
 .swiper-button-next:after {
  font-size: 20px;
  font-weight: 700;
+  @media (max-width: 460px) {
+    font-size: 15px;
+  }
+}
+.swiper-button-prev:after {
+  transform: translatex(-10%);
 
 }
+.swiper-button-next:after {
+  transform: translatex(10%);
+
+}
+
 </style>
