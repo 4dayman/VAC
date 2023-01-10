@@ -118,7 +118,8 @@
         margin-right: -10px;
     }
     @media (max-width: 768px) {
-        margin: 0 auto;    
+        margin: 0 auto; 
+        max-width: 320px;   
     }
 }
 .five_steps-image1, 

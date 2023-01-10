@@ -50,6 +50,9 @@
     @media (max-width:  768px) {
         text-align: center;
         // max-width: 308px;
+        font-size: 30px;
+        margin-top: 80px;
+
     }
 }
 .advantages_block {

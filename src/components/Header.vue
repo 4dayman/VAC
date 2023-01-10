@@ -21,6 +21,7 @@
             <div class="menu_body_shadow" @click="active = !active" :class="{active}"></div>
             <nav class="menu_body" :class="{active}">
                 <ul class="menu_list">
+                    <li @click="active = !active"><router-link to="/about" class="menu_link hide">Inventory</router-link></li>
                     <li @click="active = !active"><router-link to="/about" class="menu_link">Contact us</router-link></li>
                     <li @click="active = !active"><router-link to="/" class="menu_link">About VAC</router-link></li>
                     <li @click="active = !active"><router-link to="/" class="menu_link">Lean Rates</router-link></li>
@@ -228,13 +229,22 @@ export default {
     background: #fff;
     padding: 130px 0px 105px 60px;
     z-index: 4;
-    transition: right 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
     overflow: auto;
     display: flex;
     align-items: flex-start;
     flex-direction: column;
     justify-content: space-between;
     box-shadow: 0px 0px 50px rgba(0, 0, 0, .1);
+    @media (max-width: 1024px) {
+        width: 50%;
+    }
+    @media (max-width: 768px) {
+        width: 70%;
+    }
+    @media (max-width: 425px) {
+        width: 100%;
+    }
 }
 .menu_body.active {
     right: 0;
@@ -260,6 +270,12 @@ export default {
         a {
             color: #41456B;
         }
+    }
+}
+.menu_link.hide {
+    display: none;
+    @media (max-width: 768px) {
+        display: block;
     }
 }
 .menu_social {

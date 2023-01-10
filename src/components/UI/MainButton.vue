@@ -53,4 +53,7 @@ export default {
         padding: 9px;
     }
 }
+.max {
+    width: 200px;
+}
 </style>
