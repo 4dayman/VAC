@@ -12,9 +12,9 @@
     >
       <swiper-slide
         class="slide"
-        v-for="image in images"
-        :key="image.id"
-        :model="image.model"
+        v-for="(image, index) in images"
+        :key="index"
+        :model="model = image.model"
       >
         <img
           :src="image.imgUrl"
@@ -48,14 +48,15 @@ export default {
         { id: 3, model: 'TRUCK', imgUrl: require("@/assets/main_swiper/TRUCK.png") },
         { id: 4, model: 'VAN', imgUrl: require("@/assets/main_swiper/VAN.png") },
       ],
+      model: [],
     }
   },
   methods: {
     onSwiper() {
       console.log()
     },
-    onSlideChange(image) {
-      this.$emit('carModel', image )
+    onSlideChange() {
+      this.$emit('carModel', this.model )
     },
   }
 

@@ -1,4 +1,5 @@
 <template>
+<div class="wrapper_inventory">
     <div class="inventory">
         <div class="inventory_cars">
                 <img  src="@/assets/InventoryMain.png" alt="">
@@ -16,6 +17,7 @@
             </div>
         </div>
     </div>
+    </div>
 </template>
 <script>
 import MainButton from '@/components/UI/MainButton.vue'
@@ -27,17 +29,25 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-    .inventory {
+    .wrapper_inventory {
         max-width: 1230px;
         margin: 0 auto;
+    }
+    .inventory {
+        margin: 220px 0;
         padding: 0 15px;
         height: 311px;
         display: flex;
+        align-items: center;
         justify-content: space-between;
         @media (max-width: 1024px) {
             flex-direction: column-reverse;
             height: 495px;
+            margin: 160px 0;
             align-items: center;
+        }
+        @media (max-width: 768px) {
+            margin: 80px 0;
         }
     }
     .inventory_cars {
