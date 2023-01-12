@@ -44,9 +44,7 @@ export default {
 .metrics_wrapper {
     max-width: 1230px;
     margin: 0 auto;
-    // height: 336px;
     padding: 0 15px;
-    
 }
 .metrics {
     height: 336px;
@@ -174,12 +172,10 @@ export default {
     margin-top: -160px;
     @media (max-width: 1024px) {
         margin-top: 40px;
-        // margin: 0 auto;
     }
     @media (max-width: 768px) {
         margin-top: 20px;
         align-items: stretch;
-
     }
 
     p{
@@ -194,7 +190,6 @@ export default {
         @media (max-width: 768px) {
             margin-bottom: 20px;
         }
-
     }
 }
 </style>

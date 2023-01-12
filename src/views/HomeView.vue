@@ -6,6 +6,7 @@
     <Advantages/>
     <Inventory/>
     <Metrics/>
+    <Comments/>
     <!-- <HelloScr/> -->
     <!-- <HeadComp>Some text</HeadComp> -->
     <div class="">Home Page</div>
@@ -23,6 +24,7 @@ import FiveSteps from '@/components/FiveSteps.vue'
 import Advantages from '@/components/Advantages.vue'
 import Inventory from '@/components/Inventory.vue'
 import Metrics from '@/components/Metrics.vue'
+import Comments from '@/components/Comments.vue'
 // import HelloScr from '@/components/HelloScr.vue'
 // import HeadComp from '@/components/HeadComp.vue'
 export default {
@@ -34,6 +36,7 @@ export default {
     Advantages, 
     Inventory, 
     Metrics,
+    Comments,
     // HelloScr,
     // HeadComp
   }
