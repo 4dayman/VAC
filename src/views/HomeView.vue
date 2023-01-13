@@ -1,13 +1,14 @@
 <template>
   <div class="home">
-    <HelloScreen/>
+    <Header/>
+    <!-- <HelloScreen/> -->
+    <HelloScr/>
     <HowDoesItWork /> 
     <FiveSteps/>
     <Advantages/>
     <Inventory/>
     <Metrics/>
     <Comments/>
-    <!-- <HelloScr/> -->
     <!-- <HeadComp>Some text</HeadComp> -->
     <div class="">Home Page</div>
     <nav>
@@ -18,26 +19,29 @@
 </template>
 
 <script>
-import HelloScreen from '@/components/HelloScreen.vue'
+import Header from '@/components/Header.vue'
+
+// import HelloScreen from '@/components/HelloScreen.vue'
+import HelloScr from '@/components/HelloScr.vue'
 import HowDoesItWork from '@/components/HowDoesItWork.vue'
 import FiveSteps from '@/components/FiveSteps.vue'
 import Advantages from '@/components/Advantages.vue'
 import Inventory from '@/components/Inventory.vue'
 import Metrics from '@/components/Metrics.vue'
 import Comments from '@/components/Comments.vue'
-// import HelloScr from '@/components/HelloScr.vue'
 // import HeadComp from '@/components/HeadComp.vue'
 export default {
   name: 'HomeView',
   components: {
-    HelloScreen, 
+    Header,
+    // HelloScreen, 
     HowDoesItWork, 
     FiveSteps, 
     Advantages, 
     Inventory, 
     Metrics,
     Comments,
-    // HelloScr,
+    HelloScr,
     // HeadComp
   }
 }

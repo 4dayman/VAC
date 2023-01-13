@@ -1,10 +1,7 @@
 <template>
     <div class="container">
         <div class="hello_screen">
-            <img class="hello_bg" src="@/assets/Bg vector.png" alt="">
-            <div class="hello_road">
-                <img src="@/assets/Road vector.png" alt="">
-            </div>
+            <img class="hello_bg" src="@/assets/Bg.png" alt="">
             <div class="content">
                 <div class="content_top">
                     <div class="content_head">
@@ -44,7 +41,6 @@ export default {
 <style lang="scss" scoped>
     .container {
         width: 100%;
-        background: #7481FF;
     }
     .hello_screen {
         position: relative;
@@ -64,35 +60,15 @@ export default {
             object-fit: cover;
         }
     }
-    .hello_road {
-        position: absolute;
-        top: 141px;
-        right: 143px;
-        max-width: 818px;
-        max-height: 394px;
-        padding-left: 15px;
-        img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        @media (max-width: 768px) {
-            display: none;
-        }
-    }
     .content {
         max-width: 1230px;
         padding: 0 15px;
         margin: 0 auto;
-        // display: flex;
-        // display: grid;
-        // grid-template: 1fr 1fr;
         @media (max-width: 768px) {
         }
 
     }
     .content_top {
-        // margin-top: 120px;
         padding-top: 120px;
         display: flex;
         align-items: flex-start;
@@ -107,7 +83,6 @@ export default {
         }
     }
     .content_right {
-        // margin-top: 177px;
         @media (max-width: 768px) {
             margin-top: 60px;
         }
@@ -131,7 +106,6 @@ export default {
         letter-spacing: 0.02em;
         color: #FFFFFF;
         text-align: left;
-        // margin-top: 120px;
         margin-bottom: 60px;
         @media (max-width: 768px) {
             max-width: 600px;

@@ -1,23 +1,22 @@
 <template>
     <div class="container">
         <div class="hello_screen">
-            <img class="hello_bg" src="@/assets/Bg vector.png" alt="">
-            <div class="hello_road">
-                <img src="@/assets/Road vector.png" alt="">
-            </div>
+            <img class="hello_bg" src="@/assets/Bg.png" alt="">
             <div class="content">
                 <div class="content_top">
                     <div class="content_head">
                         The easiest way to buy a car in Canada
                     </div>
                     <div class="content_right">
-                        <Swiper 
+                        <Swiper
+                            :swiper_data="cars"
+                            :interval="2000"
                             @carModel="showModel"
                         />
                     </div>
                 </div>
                 <div class="content_btn">
-                    <main-button class="white max">Request a suv</main-button>
+                    <main-button class="white max">Request a {{ this.model }}</main-button>
                 </div>
             </div>
         </div>
@@ -26,15 +25,28 @@
 
 <script>
 import MainButton from '@/components/UI/MainButton.vue'
-import Swiper from '@/components/Swiper.vue'
+import Swiper from '@/components/HelloScrSwiper.vue'
 export default {
     components: {
         MainButton,
         Swiper
     },
+    data() {
+        return {
+            cars: [
+                { id: 1, model: 'SUV', imgUrl: require("@/assets/main_swiper/SUV.png") },
+                { id: 2, model: 'CAR', imgUrl: require("@/assets/main_swiper/CAR.png") },
+                { id: 3, model: 'TRUCK', imgUrl: require("@/assets/main_swiper/TRUCK.png") },
+                { id: 4, model: 'VAN', imgUrl: require("@/assets/main_swiper/VAN.png") },
+            ],
+            model: 'SUV'
+        }
+    },
+
     methods: {
-        showModel(data){
-            console.log(data)
+        showModel(data) {
+            // console.log(data)
+            return this.model = data
         }
     }
 }
@@ -44,7 +56,6 @@ export default {
 <style lang="scss" scoped>
     .container {
         width: 100%;
-        background: #7481FF;
     }
     .hello_screen {
         position: relative;
@@ -62,22 +73,7 @@ export default {
             width: 100%;
             height: 100%;
             object-fit: cover;
-        }
-    }
-    .hello_road {
-        position: absolute;
-        top: 141px;
-        right: 143px;
-        max-width: 818px;
-        max-height: 394px;
-        padding-left: 15px;
-        img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        @media (max-width: 768px) {
-            display: none;
+            z-index: -1;
         }
     }
     .content {
@@ -117,6 +113,7 @@ export default {
         }
     }
     .content_btn {
+        margin-top: 40px;
         display: flex;
         @media (max-width: 1024px) {
             justify-content: center;

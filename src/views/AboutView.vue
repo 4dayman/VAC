@@ -1,5 +1,6 @@
 <template>
   <div class="about">
+      <Header/>
     <h1>This is an about page</h1>
     <nav>
       <router-link to="/">Home</router-link> |
@@ -7,9 +8,12 @@
     </nav>
   </div>
 </template>
+
 <script>
+import Header from '@/components/Header.vue'
 export default {
 components: {
+  Header,
 }
 }
 
